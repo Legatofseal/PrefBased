@@ -43,4 +43,14 @@ public class Player {
     public void setType(PLAYER_TYPE type) {
         this.type = type;
     }
+    public Card throwCard(int index){
+        if (hand.size()==0){
+            return null;
+        }
+        else {
+            Card temp = hand.get(index);
+            hand.remove(index);
+            return new Card(temp.getCard_value(), temp.getSuite(), this);
+        }
+    }
 }
